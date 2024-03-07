@@ -13,7 +13,7 @@ Le but est donc d'utiliser la théorie sur les manifolds dans le FGM.
  
 # 3. Explications des fichiers
 
-## 3.1 fgm_restart.py
+## 3.1 frgm_restart.py
 
 ## 3.2 ModifiedRealSchurManifold.py
 ## 3.3 nearest_schur_stable_2x2.py
