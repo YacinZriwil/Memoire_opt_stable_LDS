@@ -3,7 +3,7 @@ On veut trouver les matrices $A$ et $B$ telles que, pour les observations donné
 La contrainte est que la matrice A doit être stable au sens de Schur car le système dynamique associé est à valeurs discrètes : $y_t \equiv x_{t+1} = A x_t + B u_t$.
 
 ## - Stabilité de Schur
-$\Omega_S = \{z \in \mathbb{C} : |z| \leq 1 \}$ \
+$\Omega_S =$ { $z \in \mathbb{C} : |z| \leq 1$ } \
 Une matrice $A$ est stable ssi toutes les valeurs propres sont dans $\Omega_S$. \
 On va noter l'espace $RS$ qui est l'espace des matrices de Schur réelle modifiée.
 
