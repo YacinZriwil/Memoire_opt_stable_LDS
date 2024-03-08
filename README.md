@@ -15,7 +15,7 @@ Le but est donc d'utiliser la théorie sur les manifolds dans le FGM.
 # 3. Explications des fichiers
 
 ## 3.1 frgm_restart.py
-Ce script contient : \
+Ce script contient : 
 1. l'initialisation : la matrice orthogonale a été calculé avec le SOC algorithm utilisé dans l'article NeurIPS;
 2. le gradient euclidien : le calcul de $\nabla f$ est noté dans les annexes du rapport.
 3. algorithme FRGM with restart.
