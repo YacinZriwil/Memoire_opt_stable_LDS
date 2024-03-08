@@ -20,7 +20,7 @@ Ce script contient : \
 2. le gradient euclidien : le calcul de $\nabla f$ est noté dans les annexes du rapport.
 3. algorithme FRGM with restart.
 
-## 3.2 ModifiedRealSchurManifold.py
+## 3.2 modified_real_schur_manifold.py
 Ce script contient une classe qui hérite de RiemannianSubmanifold de PyManopt même si je n'utilise pas ici le solveur de PyManopt. (j'ai déjà testé et j'ai eu quelques soucis avec l'utilisation du gradient avec un produit de manifolds donc j'ai gardé la classe si jamais je reviens sur PyManopt plus tard).
 
 J'ai donc implémenté : 
@@ -33,5 +33,5 @@ Ce script contient le calcul des 15 matrices possiblement stables pour le cas d'
 ## 3.4 RunMe
 ### Robot Franka Emika Panda
 Pour tester le code, on peut utiliser le jeu de données de NeurIPS pour le bras robotisé "Franka". Dans ce github, il y a les fichiers contenant les matrices $U, X, Y$ qui sont les données du le robot (positions, angles, ... ). \
-Il faut lancer le fichier Run_Me_Robot_Franka. 
+Il faut lancer le fichier RunMe_Robot_Franka.py. 
 
