@@ -10,13 +10,12 @@ from pymanopt.manifolds.manifold import RiemannianSubmanifold
 # d'être dans le cas des matrices dans la forme de Schur réelle modifiée càd : 
 #   
 #   1. Projection
-#   2. Rétraction (qui est en fait la fonction exp car l'exponentielle est un type de rétraction particulier (géodésique))
+#   2. Rétraction
 #   3. random_point
 # =================================================================================================================
 """
 class ModifiedRealSchur(RiemannianSubmanifold):
     def __init__(self, n : int):
-        # Initialisation de votre manifold avec ses paramètres spécifiques
         self.n = n
         self._shape = (n,n)
         dimension = int(n*(n+1)/2 + n//2)
@@ -83,6 +82,7 @@ class ModifiedRealSchur(RiemannianSubmanifold):
     retraction = exp
 
     def random_point(self):
+        print("je suis la dans random point")
         a,b = -10, 10
         # Initialiser la matrice à zéro
         T = np.zeros((self.n, self.n), dtype=int)
@@ -111,6 +111,16 @@ class ModifiedRealSchur(RiemannianSubmanifold):
                     T[i:i+2, i+2:self.n] = np.random.randint(a, b+1, size=(2, self.n-i-2))
                 i += 2
         
+        #on stabilise T
+        for i in range(0, self.n - 1, 2):  
+            bloc_2x2 = T[i:i+2, i:i+2]
+            T[i:i+2, i:i+2] = get_nearest_stable_2x2_matrix_schur(bloc_2x2)
+    
+        if self.n % 2 == 1:
+            bloc_1x1 = [T[-1][-1]]
+            T[-1][-1] = get_nearest_stable_2x2_matrix_schur(bloc_1x1)
+            
+
         return T.astype(np.float64)
 
     def random_tangent_vector(self, point):

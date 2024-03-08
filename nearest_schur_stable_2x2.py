@@ -7,11 +7,18 @@ def compute_G_in_SO2(A):
     # calcul le G tq : Â = G.T @ A @ G avec  Â[1,1] = Â[2,2]
     a, b, c, d = A[0][0], A[0][1], A[1][0], A[1][1]
     
-    x = 1/2 * atan((d-a)/(b+c))
-    
-    alpha = x if x >= 0 else x + PI/2  
-    
-    G = np.array([[cos(alpha), -sin(alpha)], [sin(alpha), cos(alpha)]])
+    G = None
+    if b+c == 0:
+        if a-d ==0:
+            G = np.array([[cos(0), -sin(0)], [sin(0), cos(0)]]) #fonctionne quelque soit l'angle donc pour angle = 0 aussi
+        else:
+            G = np.array([[cos(PI/4), -sin(PI/4)], [sin(PI/4), cos(PI/4)]])
+    else:
+        x = 1/2 * atan((d-a)/(b+c))
+        
+        alpha = x if x >= 0 else x + PI/2  
+        
+        G = np.array([[cos(alpha), -sin(alpha)], [sin(alpha), cos(alpha)]])
     
     return G
 
