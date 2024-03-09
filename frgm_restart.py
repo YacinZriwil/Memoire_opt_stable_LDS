@@ -147,4 +147,4 @@ def optimize(Y, X, U, gamma = 0.0001, min_gamma = 0.0000000001, alpha1 = 1, max_
     print(f"Temps écoulé : {((end_time - start_time)):.2f}s\n========================================")
     print(f"best_A schur-stable ? -> {is_stable_schur(best_A)}")
     
-    return best_A
+    return best_A, best_B
