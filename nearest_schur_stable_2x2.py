@@ -50,7 +50,7 @@ def compute_bold_Bstar(A_hat, G):
     return bold_Bstar
     
 def get_nearest_stable_2x2_matrix_schur(A):
-    if A.shape == (1, 1):
+    if A.shape == (1, 1) or A.shape == (1,):
         if A[0] > 1:
             return 1
         else :

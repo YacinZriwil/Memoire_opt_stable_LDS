@@ -60,7 +60,7 @@ class ModifiedRealSchur(RiemannianSubmanifold):
                 i = 2*(j+1)
                 T[i:,J:J+1 +1] = 0
                 
-            bloc_1x1 = [T[-1][-1]]
+            bloc_1x1 = np.array([T[-1][-1]])
             T[-1][-1] = get_nearest_stable_2x2_matrix_schur(bloc_1x1)
             
         #on stabilise T
